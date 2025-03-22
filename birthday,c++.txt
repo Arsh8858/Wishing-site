@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cstdlib> // For system("cls") or system("clear")
+#include <chrono>
+#include <thread>
+
+using namespace std;
+
+void showSurprise() {
+    cout << "\n🎁 Surprise! May your year be filled with laughter and success! 🎂🥳\n";
+}
+
+void animateText(string text, int delay = 100) {
+    for (char c : text) {
+        cout << c << flush;
+        this_thread::sleep_for(chrono::milliseconds(delay));
+    }
+    cout << endl;
+}
+
+int main() {
+    system("cls"); // Use "clear" if on macOS/Linux
+
+    animateText("🎉 Happy Birthday! 🎂", 150);
+    animateText("Wishing you a day filled with love, joy, and endless happiness! 🥳", 100);
+    
+    cout << "\nPress Enter to receive a surprise... ";
+    cin.get(); // Wait for user input
+    
+    showSurprise();
+
+    return 0;
+}
